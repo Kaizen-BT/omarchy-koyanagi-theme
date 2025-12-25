@@ -1,0 +1,11 @@
+@define-color background transparent;
+@define-color foreground #FFFFFF;
+
+.modules-left,
+.modules-right {
+    margin-top: 6px;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    color: @foreground;
+    padding: 6px;
+}
