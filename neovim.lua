@@ -6,21 +6,22 @@ local M = {
 				vim.cmd("set termguicolors")
 
 				   local colors = {
-					   bg = "#1C1C1E",
-					   fg = "#FFFFFF",
-					   gold = "#ffdd80",
-					   primary = "#8A8A8A",      
-					   secondary = "#ffdd80",   
+					   bg = "#1C1C1E",         -- palette 0
+					   fg = "#F2F2F2",         -- palette 1, 6, 7
+					   gold = "#FFDD80",        -- palette 2
+					   primary = "#8A8A8A",     -- palette 5
+					   secondary = "#6A6A6A",   -- palette 3
+					   tertiary = "#7A7A7A",    -- palette 4
+					   accent = "#FFDD80",      -- palette 2
+					   muted = "#6A6A6A",       -- palette 3
+					   dark = "#1C1C1E",        -- palette 0
+					   border = "#7A7A7A",      -- palette 4
+					   selection = "#7A7A7A",   
 					   success = "#80e680",
 					   danger = "#e65c5c",
-					   warning = "#ffcc66",
-					   info = "#66cccc",
-					   muted = "#606060",
-					   dark = "#2a2a2a",
-					   accent = "#ffdd80",
-					   subtle = "#404040",
-					   border = "#404040",
-					   selection = "#404040",
+					   warning = "#FFDD80",
+					   info = "#8A8A8A",
+					   subtle = "#6A6A6A"
 				   }
 
 				vim.cmd("highlight clear")
@@ -174,7 +175,7 @@ local M = {
 				set_hl("@lsp.type.enum", { link = "Type" })
 				set_hl("@lsp.type.interface", { link = "Type" })
 
-				vim.g.colors_name = "koyanagi-gray"
+				vim.g.colors_name = "koyanagi"
 			end,
 		},
 	},
