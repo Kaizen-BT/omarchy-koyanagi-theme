@@ -1,5 +1,5 @@
 # Main background and text
-theme[main_bg]      = "#1C1C1E"
+theme[main_bg]      = ""
 theme[main_fg]      = "#FFFFFF"
 theme[title]        = "#FFFFFF"
 theme[hi_fg]        = "#8E8E93"
