@@ -1,30 +1,30 @@
-local M = {
+return {
 	{
 		"LazyVim/LazyVim",
 		opts = {
 			colorscheme = function()
 				vim.cmd("set termguicolors")
-
-				   local colors = {
-					   bg = "#1C1C1E",         -- palette 0
-					   fg = "#F2F2F2",         -- palette 1, 6, 7
-					   gold = "#FFDD80",        -- palette 2
-					   primary = "#8A8A8A",     -- palette 5
-					   secondary = "#6A6A6A",   -- palette 3
-					   tertiary = "#7A7A7A",    -- palette 4
-					   accent = "#FFDD80",      -- palette 2
-					   muted = "#6A6A6A",       -- palette 3
-					   dark = "#1C1C1E",        -- palette 0
-					   border = "#7A7A7A",      -- palette 4
-					   selection = "#7A7A7A",   
-					   success = "#80e680",
-					   danger = "#e65c5c",
-					   warning = "#FFDD80",
-					   info = "#8A8A8A",
-					   subtle = "#6A6A6A"
-				   }
-
 				vim.cmd("highlight clear")
+
+				local colors = {
+					bg = "#1C1C1E", -- palette 0
+					fg = "#F2F2F2", -- palette 1, 6, 7
+					gold = "#FFDD80", -- palette 2
+					primary = "#8A8A8A", -- palette 5
+					secondary = "#6A6A6A", -- palette 3
+					tertiary = "#7A7A7A", -- palette 4
+					accent = "#FFDD80", -- palette 2
+					muted = "#6A6A6A", -- palette 3
+					dark = "#1C1C1E", -- palette 0
+					border = "#7A7A7A", -- palette 4
+					selection = "#7A7A7A",
+					success = "#80e680",
+					danger = "#e65c5c",
+					warning = "#FFDD80",
+					info = "#8A8A8A",
+					subtle = "#6A6A6A",
+					custom_selection = "#303033",
+				}
 
 				local function set_hl(group, opts)
 					vim.api.nvim_set_hl(0, group, opts)
@@ -175,10 +175,17 @@ local M = {
 				set_hl("@lsp.type.enum", { link = "Type" })
 				set_hl("@lsp.type.interface", { link = "Type" })
 
+				--- Some LSP Adjustments
+				set_hl("LspReferenceText", { bg = colors.custom_selection })
+				set_hl("LspReferenceRead", { bg = colors.custom_selection })
+				set_hl("LspReferenceWrite", { bg = colors.custom_selection })
+
+				--- v and V mode Adjustments
+				set_hl("Visual", { bg = colors.custom_selection })
+				set_hl("VisualNOS", { bg = colors.custom_selection })
+
 				vim.g.colors_name = "koyanagi"
 			end,
 		},
 	},
 }
-
-return M
